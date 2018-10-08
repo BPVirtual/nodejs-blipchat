@@ -1,0 +1,40 @@
+<% var title = 'Brasilprev - Login (Averbado)' %>
+<% include head %>
+
+<section id="principal" class="col-md-12">
+  <div class="container col-md-6">
+    <form method="post" action="/login">
+      <div>
+        <p>
+          <img src="/images/logo.png" class="img-fluid rounded" alt="Brasilprev">
+        </p>
+      </div>
+      <p>
+        <label for="username">CPF</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="___.___.___-__" maxlength="15"
+          data-mask="000.000.000-00" required>
+      </p>
+      <p>
+        <label for="password">Senha*</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Preencha sua senha"
+          maxlength="8" required>
+        <p class="font-italic">*Sua senha corresponde à junção do ano de sua admissão e o ano de seu nascimento.<br>
+          Ex.: Admissão - 01/06/<b>2016</b> | Nascimento: 20/01/<b>1992</b> -> Senha: <b>20161992</b>
+        </p>
+      </p>
+      <p>
+        <input type="submit" value="Entrar" class="btn btn-login">
+      </p>
+    </form>
+  </div>
+</section>
+
+
+<script>
+    //Mascara CPF
+    $(document).ready(function($){
+      $('#username').mask('999.999.999-99');
+    });
+    </script>
+
+<% include foot %>
